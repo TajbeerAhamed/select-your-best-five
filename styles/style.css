@@ -11,10 +11,8 @@
     color: orangered;
 }
 
-
-
 body {
-    background-color: rgba(0, 0, 0, 0.918);
+    background-color: rgba(0, 0, 0, 0.938);
 }
 
 .hr-color {
@@ -22,11 +20,8 @@ body {
     color: azure;
 }
 
-
-
 footer {
     background-color: black;
     color: rgb(198, 157, 236);
     height: 10rem;
-
 }
