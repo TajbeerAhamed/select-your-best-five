@@ -34,7 +34,8 @@ function addToCart(element) {
 document.getElementById('calculate').addEventListener('click', function () {
 
     const perPlayerField = document.getElementById('per-player-field');
-    const perPlayer = perPlayerField.value;
+    const perPlayerFloat = perPlayerField.value;
+    const perPlayer = parseFloat(perPlayerFloat)
 
     const cartPlayerAmount = document.getElementById('total-player-added')
     const totalPlayer = cartPlayerAmount.innerText
@@ -47,24 +48,20 @@ document.getElementById('calculate').addEventListener('click', function () {
 
 
     document.getElementById('cal-total').addEventListener('click', function () {
-        // const perPlayerField = document.getElementById('per-player-field');
-        // const perPlayer = perPlayerField.value;
-
-        // const cartPlayerAmount = document.getElementById('total-player-added')
-        // const totalPlayer = cartPlayerAmount.innerText
-
-        // const playerExpenses = perPlayer * totalPlayer;
-
-
+        const totalPlayerExpenses = document.getElementById('total-player-expenses')
+        const totalPlayerPrice = totalPlayerExpenses.value;
 
         const managerCost = document.getElementById('manager')
-        const managerPrice = managerCost.value;
+        const managerPriceFloat = managerCost.value;
+        const managerTotalCost = parseFloat(managerPriceFloat)
 
         const coachCost = document.getElementById('coach')
-        const coachPrice = coachCost.value;
+        const coachPriceFloat = coachCost.value;
+        const coachTotalCost = parseFloat(coachPriceFloat)
+
 
         const finalTotal = document.getElementById('final-total')
-        finalTotal.innerText = + managerPrice + coachPrice;
+        finalTotal.innerText = totalPlayerPrice + + managerTotalCost + coachTotalCost;
 
     })
 })

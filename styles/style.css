@@ -1,9 +1,8 @@
 .header-section {
-    width: 1440px;
-    height: 481px;
+    width: 90rem;
+    height: 30rem;
     background-color: black;
-    margin-left: 220px;
-
+    margin-left: 14rem;
 }
 
 .text-color {
