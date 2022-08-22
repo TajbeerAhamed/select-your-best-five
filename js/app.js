@@ -41,10 +41,32 @@ document.getElementById('calculate').addEventListener('click', function () {
 
 
     const playerExpenses = perPlayer * totalPlayer;
-    console.log(playerExpenses)
     const totalPlayerExpenses = document.getElementById('total-player-expenses')
     totalPlayerExpenses.innerText = playerExpenses
 
+
+
+    document.getElementById('cal-total').addEventListener('click', function () {
+        // const perPlayerField = document.getElementById('per-player-field');
+        // const perPlayer = perPlayerField.value;
+
+        // const cartPlayerAmount = document.getElementById('total-player-added')
+        // const totalPlayer = cartPlayerAmount.innerText
+
+        // const playerExpenses = perPlayer * totalPlayer;
+
+
+
+        const managerCost = document.getElementById('manager')
+        const managerPrice = managerCost.value;
+
+        const coachCost = document.getElementById('coach')
+        const coachPrice = coachCost.value;
+
+        const finalTotal = document.getElementById('final-total')
+        finalTotal.innerText = + managerPrice + coachPrice;
+
+    })
 })
 
 

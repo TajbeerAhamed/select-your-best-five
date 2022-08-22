@@ -61,12 +61,12 @@
                 <h1 class="text-center mt-3 ">Player Selected- <span id="total-player-added">0</span></h1>
                 <div id="cart-player" class="card-body">
                     <ul class="fs-4">
-
                     </ul>
-
                 </div>
             </div>
+
         </section>
+
         <section class="mt-5 container d-flex gap-4">
             <div class="card bg-dark" style="width: 18rem;">
                 <img src="images/ramos.jpg" class="card-img-top h-100" alt="...">
@@ -114,15 +114,19 @@
                         <h4>$<span id="total-player-expenses">0</span></h4>
                     </div>
                     <div class="d-inline-flex mt-3">
-                        <p class="fw-semi-bold me-2">Manager</p>
-                        <input type="number" name="" id="">
+                        <p id="manager" class="fw-semi-bold me-2">Manager</p>
+                        <input type="text" name="" id="">
                     </div>
                     <div class="d-inline-flex mt-3">
-                        <p class="fw-semi-bold me-4">Coach</p>
-                        <input type="number" name="" id="">
+                        <p id="coach" class="fw-semi-bold me-4">Coach</p>
+                        <input type="text" name="" id="">
                     </div>
-                    <button class="btn btn-primary mx-5 px-6 py-1 fw-semibold mt-3">Calculate Total</button>
-                    <p class="fw-semi-bold mt-2">Total</p>
+                    <button id="cal-total" class="btn btn-primary mx-5 px-6 py-1 fw-semibold mt-3">Calculate
+                        Total</button>
+                    <div class="d-inline-flex mt-3">
+                        <p class="fw-semi-bold me-5">Total</p>
+                        <h4 class="ms-5">$<span id="final-total ">0</span></h4>
+                    </div>
                 </div>
             </div>
         </section>
