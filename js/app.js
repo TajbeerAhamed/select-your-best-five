@@ -2,25 +2,32 @@
 const cartArray = [];
 
 function display(cartProduct) {
-    console.log(cartProduct);
+    // console.log(cartProduct);
     const cartPlayer = document.getElementById('cart-player')
     cartPlayer.innerHTML = ''
     for (let i = 0; i < cartProduct.length; i++) {
 
+
         const name = cartArray[i].playerName
 
-        const ul = document.createElement('ul')
-        ul.innerHTML = `
-        <li>${i + 1}.  ${name} </li>
-        `
-        cartPlayer.appendChild(ul)
+        const li = document.createElement('li')
+        li.innerText = `${i + 1}. ${name}`
+        li.style.listStyle = 'none'
+        cartPlayer.appendChild(li)
     }
 
 }
 
 function addToCart(element) {
 
+    if (cartArray.length === 5) {
+        return alert("You Cannot select more than 5")
+    }
+
     const playerName = element.parentNode.parentNode.children[0].innerText;
+    console.log(element)
+    element.style.cursor = 'not-allowed'
+    element.disabled = true
     const playerObj = {
         playerName: playerName
     }
@@ -49,10 +56,15 @@ document.getElementById('calculate').addEventListener('click', function () {
 
     document.getElementById('cal-total').addEventListener('click', function () {
         const totalPlayerExpenses = document.getElementById('total-player-expenses')
-        const totalPlayerPrice = totalPlayerExpenses.value;
+
+        // console.log(typeof totalPlayerExpenses.innerText)
+
+        const totalPlayerExpensesFloat = parseFloat(totalPlayerExpenses.innerText)
+
 
         const managerCost = document.getElementById('manager')
         const managerPriceFloat = managerCost.value;
+        // console.log(managerCost)
         const managerTotalCost = parseFloat(managerPriceFloat)
 
         const coachCost = document.getElementById('coach')
@@ -61,7 +73,9 @@ document.getElementById('calculate').addEventListener('click', function () {
 
 
         const finalTotal = document.getElementById('final-total')
-        finalTotal.innerText = totalPlayerPrice + + managerTotalCost + coachTotalCost;
+        const totalPrice = totalPlayerExpensesFloat + managerTotalCost + coachTotalCost;
+
+        finalTotal.innerText = totalPrice
 
     })
 })
