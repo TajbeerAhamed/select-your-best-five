@@ -21,7 +21,7 @@ function display(cartProduct) {
 function addToCart(element) {
 
     if (cartArray.length === 5) {
-        return alert("Sorry you can't select more than five people")
+        return alert("Sorry you can't select more than five player")
     }
 
     const playerName = element.parentNode.parentNode.children[0].innerText;
